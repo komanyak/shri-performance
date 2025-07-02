@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-export default function Event(props) {
+export function DeviceEvent(props) {
   const ref = useRef();
 
   useEffect(() => {

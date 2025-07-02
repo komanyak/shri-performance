@@ -1,3 +1,8 @@
+import React from "react";
+import { DeviceEvent } from "./DeviceEvent";
+import { TABS_KEYS } from "../data/tabs";
+import { TABS } from "../data/tabs";
+
 export default function Main() {
   const ref = React.useRef();
   const initedRef = React.useRef(false);
@@ -9,7 +14,7 @@ export default function Main() {
       initedRef.current = true;
       setActiveTab(new URLSearchParams(location.search).get("tab") || "all");
     }
-  });
+  }, [activeTab]);
 
   const onSelectInput = (event) => {
     setActiveTab(event.target.value);
@@ -22,7 +27,7 @@ export default function Main() {
 
   React.useEffect(() => {
     const sumWidth = sizes.reduce((acc, item) => acc + item.width, 0);
-    const sumHeight = sizes.reduce((acc, item) => acc + item.height, 0);
+    // const sumHeight = sizes.reduce((acc, item) => acc + item.height, 0);
 
     const newHasRightScroll = sumWidth > ref.current.offsetWidth;
     if (newHasRightScroll !== hasRightScroll) {
@@ -77,19 +82,19 @@ export default function Main() {
             </ul>
           </div>
           <ul className="hero-dashboard__schedule">
-            <Event
+            <DeviceEvent
               icon="temp"
               iconLabel="Температура"
               title="Philips Cooler"
               subtitle="Начнет охлаждать в 16:30"
             />
-            <Event
+            <DeviceEvent
               icon="light"
               iconLabel="Освещение"
               title="Xiaomi Yeelight LED Smart Bulb"
               subtitle="Включится в 17:00"
             />
-            <Event
+            <DeviceEvent
               icon="light"
               iconLabel="Освещение"
               title="Xiaomi Yeelight LED Smart Bulb"
@@ -105,32 +110,32 @@ export default function Main() {
         </h2>
 
         <ul className="event-grid">
-          <Event
+          <DeviceEvent
             slim={true}
             icon="light2"
             iconLabel="Освещение"
             title="Выключить весь свет в доме и во дворе"
           />
-          <Event
+          <DeviceEvent
             slim={true}
             icon="schedule"
             iconLabel="Расписание"
             title="Я ухожу"
           />
-          <Event
+          <DeviceEvent
             slim={true}
             icon="light2"
             iconLabel="Освещение"
             title="Включить свет в коридоре"
           />
-          <Event
+          <DeviceEvent
             slim={true}
             icon="temp2"
             iconLabel="Температура"
             title="Набрать горячую ванну"
             subtitle="Начнётся в 18:00"
           />
-          <Event
+          <DeviceEvent
             slim={true}
             icon="temp2"
             iconLabel="Температура"
@@ -191,7 +196,7 @@ export default function Main() {
             >
               <ul className="section__panel-list">
                 {TABS[key].items.map((item, index) => (
-                  <Event key={index} {...item} onSize={onSize} />
+                  <DeviceEvent key={index} {...item} onSize={onSize} />
                 ))}
               </ul>
             </div>
