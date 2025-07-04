@@ -276,7 +276,7 @@ body {
   display: flex;
   gap: 0.9375rem;
   height: 20.6875rem;
-  background: no-repeat 50% 50% url(assets/bg_2x.webp);
+  background: no-repeat 50% 50% url(./assets/bg_2x.webp);
   /*background-size: cover;*/
   background-size: 1260px;
   border-radius: 1.25rem;
@@ -288,7 +288,7 @@ body {
     gap: 1.25rem;
     height: auto;
     margin-bottom: 0.3125rem;
-    background-image: url(assets/bg.webp);
+    background-image: url(./assets/bg.webp);
   }
 }
 
