@@ -11,9 +11,15 @@
       type="font/woff2"
       crossorigin="anonymous"
     />
-    <script src="vendors/react-with-dom.js"></script>
+    <script src="vendors/react-with-dom.js" as="script"></script>
     <link rel="stylesheet" type="text/css" href="reset.css" />
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <link
+      rel="preload"
+      href="styles.css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
   </head>
   <body>
     <div id="app"></div>
@@ -38,7 +44,7 @@
     </footer>
 
     <script src="vendors/babel.min.js"></script>
-    <script type="text/babel" async>
+    <script type="text/babel">
       function Header() {
         let [expanded, setExpanded] = React.useState(false);
         let [toggled, setToggled] = React.useState(false);
