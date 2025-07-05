@@ -3,8 +3,13 @@ import { memo } from "react";
 import "./app.css";
 
 function Header() {
+<<<<<<< HEAD
   const [toggled, setToggled] = useState(false);
   const [expanded, setExpanded] = useState(false);
+=======
+  const [expanded, setExpanded] = useState(false);
+  const [toggled, setToggled] = useState(false);
+>>>>>>> c07a6db60eb1b4d9d1bbd074993b1dbe84668f08
 
   const onClick = () => {
     if (!toggled) {

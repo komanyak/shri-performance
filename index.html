@@ -40,8 +40,8 @@
     <script src="vendors/babel.min.js"></script>
     <script type="text/babel">
       function Header() {
-        let [toggled, setToggled] = React.useState(false);
         let [expanded, setExpanded] = React.useState(false);
+        let [toggled, setToggled] = React.useState(false);
 
         const onClick = () => {
           if (!toggled) {
