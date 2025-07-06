@@ -1,0 +1,19 @@
+# Игнорировать папку node_modules
+node_modules/
+
+# Игнорировать логи
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Игнорировать .env-файлы с конфиденциальной информацией
+.env
+.env.local
+.env.*.local
+
+
+
+build/
+
+package-lock.json
+
