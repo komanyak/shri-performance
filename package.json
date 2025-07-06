@@ -22,5 +22,9 @@
     "@babel/core": "^7.28.0",
     "@babel/preset-react": "^7.27.1",
     "terser": "^5.43.1"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }
